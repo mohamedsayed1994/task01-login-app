@@ -1,0 +1,26 @@
+<h2>Login Form</h2>
+
+<!-- <form [formGroup]="form" #LoginInformation (ngSubmit)="Login(LoginInformation)"> -->
+<div style="margin-left:10%;">
+  <div class="row">
+    <div class=" col-md-offset-1 col-md-4">
+      <label for="username"></label>
+      <input #username formControlName="username" class="form-control" type="text" placeholder="username...">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class=" col-md-offset-1 col-md-4">
+      <label for="password"></label>
+      <input #password formControlName="password" class="form-control" type="password" placeholder="password...">
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 40px;">
+    <div class="col-md-offset-1 col-md-4">
+      <button class="btn btn-md btn-primary btn-style"
+        (click)="onLoginSubmit(username.value,password.value)">Login</button>
+    </div>
+  </div>
+
+</div>

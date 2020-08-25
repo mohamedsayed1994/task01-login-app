@@ -1,3 +1,4 @@
+import { AuthenticationService } from './../../APIs/Authentication.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -8,13 +9,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class WelcomeComponent implements OnInit {
   username: String;
-  constructor(private router: Router) { }
+  token: String;
+  
+  constructor(private router: Router,
+    private authenticationService: AuthenticationService) { }
 
   ngOnInit(): void {
     this.username = localStorage.getItem('username');
+    this.token = localStorage.getItem('token');
+    console.log('welcome ==> token' + this.token)
   }
   logout() {
-    this.router.navigate(['/login']);
+    this.authenticationService.logout();
+    this.router.navigate(['/appLogin']);
   }
-
 }

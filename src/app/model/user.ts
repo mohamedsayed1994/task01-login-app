@@ -4,11 +4,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class User {
-    username: string;
-    password: string;
-
-    constructor(accountId: number, username:string, password:string) {
-        this.username=username;
-        this.password=password;
-       }
+  userName: string;
+  token: string;
+  roles: string;
+  status: string;
+  constructor() { }
 }

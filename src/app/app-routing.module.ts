@@ -1,14 +1,14 @@
+import { AppLoginComponent } from './component/app-login/app-login.component';
 import { WelcomeComponent } from './Component/welcome/welcome.component';
-import { LoginPageComponent } from './Component/login-page/login-page.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: 'login', component: LoginPageComponent },
+  { path: 'appLogin', component: AppLoginComponent },
   { path: 'welcome', component: WelcomeComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: '**', redirectTo: '/login', pathMatch: 'full' }
+  { path: '', redirectTo: '/appLogin', pathMatch: 'full' },
+  { path: '**', redirectTo: '/appLogin', pathMatch: 'full' }
 ];
 
 @NgModule({
