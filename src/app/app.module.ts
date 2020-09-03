@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './Component/welcome/welcome.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppLoginComponent } from './component/app-login/app-login.component';
+import { EmployeeFormComponent } from './component/employee-form/employee-form.component';
+import { EmployeesComponent } from './component/employees/employees.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -15,12 +18,15 @@ export function tokenGetter() {
   declarations: [
     AppComponent,
     WelcomeComponent,
-    AppLoginComponent
+    AppLoginComponent,
+    EmployeeFormComponent,
+    EmployeesComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,

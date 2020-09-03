@@ -1,0 +1,78 @@
+<div class="d-flex justify-content-center">
+    <h1>id ==> {{id}}</h1>
+    <form class="col-md-8" [formGroup]="employeeFormGroup" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="id">ID</label>
+                <input type="text" formControlName="id" class="form-control" id="id" disabled>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" id="firstName" formControlName="firstName">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" id="lastName" formControlName="lastName">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="example@example.com"
+                    formControlName="email">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="phoneNumber">Phone number</label>
+                <input type="text" class="form-control" id="phoneNumber" placeholder="01223110125"
+                    formControlName="phoneNumber">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="salary">Salary</label>
+                <input type="text" class="form-control" id="salary" placeholder="5000" formControlName="salary">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="hireDate">Hire Date</label>
+                <input type="date" class="form-control" id="hireDate" placeholder="dd/mm/yyyy"
+                    formControlName="hireDate">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="departmentId">Department ID</label>
+                <select id="departmentId" class="form-control" 
+                        formControlName="departmentId">
+                    <option *ngFor="let dept of departments" [ngValue]="dept">
+                        {{dept.departmentName}}
+                    </option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="managerId">Manager ID</label>
+                <select id="managerId" class="form-control" formControlName="managerId" disabled>
+                    <option selected>Aly</option>
+                    <option>Mariam</option>
+                    <option>Nada</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="jobId">Job ID</label>
+                <select id="jobId" class="form-control" formControlName="job">
+                    <option *ngFor="let job of jobs" [ngValue]="job">
+                        {{job.jobTitle}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary" style="margin-right: 1%;">Save</button>
+            <button type="submit" class="btn btn-danger" routerLink="/employees">Cancel</button>
+        </div>
+    </form>
+</div>
